@@ -28,7 +28,7 @@ const getUser = (userId) => {
 }
 
 io.on("connection", (socket) => {
-
+    console.log(socket.id + "connected")
     socket.on("addUserOnline", (userId) => {
         addUserOnline(userId, socket.id)
         io.emit("getUsersOnline", usersOnline)
