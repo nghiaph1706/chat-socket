@@ -1,4 +1,6 @@
-const io = require("socket.io")(process.env.PORT || 3000, '0.0.0.0');
+const io = require("socket.io")(process.env.PORT || 3000,process.env.HOST || '0.0.0.0', function () {
+  console.log('Example app listening on port 3000!');
+});
 
 let usersOnline = []
 
